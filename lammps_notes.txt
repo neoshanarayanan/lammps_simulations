@@ -1,0 +1,15 @@
+
+7.8.2019
+
+/usr/local/Cellar/lammps/2019-06-05 is location of LAMMPS executable
+
+downloaded source code onto /Users/neosha/ and it is in mylammps
+have yet to build from source code
+must compile lammps as shared-library - am getting error
+
+to do:
+work through lammps examples on website (start here: https://icme.hpc.msstate.edu/mediawiki/index.php/LAMMPS_Help)
+continue looking into building lammps from source code instead of using executable
+
+finish Isabelle's slides
+
