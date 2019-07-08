@@ -1,0 +1,36 @@
+LAMMPS (5 Jun 2019)
+# Find minimum energy fcc configuration
+# Mark Tschopp, 2010
+
+# ---------- Initialize Simulation ---------------------
+clear
+units metal
+dimension 3
+boundary p p p
+atom_style atomic
+atom_modify map array
+
+# ---------- Create Atoms ---------------------
+lattice 	fcc 4
+Lattice spacing in x,y,z = 4 4 4
+region	box block 0 1 0 1 0 1 units lattice
+create_box	1 box
+Created orthogonal box = (0 0 0) to (4 4 4)
+  1 by 1 by 1 MPI processor grid
+
+lattice	fcc 4 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+Lattice spacing in x,y,z = 4 4 4
+create_atoms 1 box
+Created 4 atoms
+  create_atoms CPU = 0.000777006 secs
+replicate 1 1 1
+  orthogonal box = (0 0 0) to (4 4 4)
+  1 by 1 by 1 MPI processor grid
+  4 atoms
+  replicate CPU = 0.000280857 secs
+
+# ---------- Define Interatomic Potential ---------------------
+pair_style eam/alloy
+pair_coeff * * Al99.eam.alloy Al
+ERROR on proc 0: Cannot open EAM potential file Al99.eam.alloy (../pair_eam_alloy.cpp:131)
+Last command: pair_coeff * * Al99.eam.alloy Al
