@@ -1,4 +1,0 @@
-LAMMPS (5 Jun 2019)
- 3d Lennard-Jones melt
-ERROR: Unknown command:  3d Lennard-Jones melt (../input.cpp:247)
-Last command:  3d Lennard-Jones melt
