@@ -1,3 +1,190 @@
+6.3.2019
+
+6.4.2019
+
+6.5.2019
+
+6.6.2019
+
+Before lunch: put extruder on table and winder on the floor. Going to see how/if this works
+Face of nozzle gets dirty really easily
+
+What am I going to do now?
+- clean out all the blue dye - just extrude all of it. 
+- measure out PLA pellets and put in 2% dye (measure with scale)
+- try to extrude that
+
+https://www.matterhackers.com/news/filament-and-water - predrying plastic for filament
+
+
+def hygroscopic: able to absorb water from the air
+
+https://www.researchgate.net/publication/316696762_Analysis_on_temperature_setting_for_extruding_polylactic_acid_using_open-source_3D_printer 
+- suggests that optimal printing temperature might be 190º
+
+http://www.soliforum.com/topic/7470/pla-4043d/ 
+- HOW TO EXTRUDE PLA!!
+- suggests 155-170º for extruding
+http://www.soliforum.com/topic/7648/basic-pla-extrusion-guide-with-pointers-per-tims-request/
+- How to zero in on diameter
+	- use calipers
+
+
+6.7.2019
+
+Effects of nucleating agents on properties of PLA
+https://www.sciencedirect.com/science/article/pii/S0014305716313052
+
+6.10.2019
+
+Storage solutions for dry PLA: 
+
+https://reprage.com/post/3D-Printer-PLA-moisture-problems-and-storage-solutions
+
+file:///Users/neosha/Dropbox%20(MIT)/SummerUROP19/PLAdrying.pdf INFORMATION ON PLA DRYING!! SUPER GOOD! WITH GRAPHS AND STUFF
+
+recycled PET (rPET): https://earthhero.com/whats-the-deal-with-rpet/
+
+
+https://www.youtube.com/watch?v=2Gt58ycd3WM Dutch Ultimaker video on PET extrusion. Looks like it's already been done
+
+6.13.2019
+
+LITERATURE REVIEW
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4786850/ in-nozzle impregnation of PLA with carbon fiber and jute fibers for 3D printer filament and printing
+
+https://pubs.acs.org/doi/pdfplus/10.1021/acs.chemmater.8b02062?src=recsys graphite loading of PLA composite for printing batteries
+- OF NOTE: created 3D printable filament (conventional FDM printer) with graphite loaded PLA
+- page 7486: extruding temperature was fixed 15 degrees C higher than the melting temp of the composite film deduced from DSC analysis - prior to each extrusion, the extruder was cleaned with neat PLA
+- used tape casting to create PLA-graphite composite for 
+
+file:///Users/neosha/Dropbox%20(MIT)/SummerUROP19/ijms-20-00504-v3.pdf adding chitin into PLA does not change its properties at all
+
+6.26.2019
+6.27.2019
+
+What I could put in my slides:
+What I've been working
+- what worked and didn't with the extruder
+	- temperature tests
+	- why extruder isn't working
+
+- future ideas: what to do with plastic/biomass composites
+	- mechanical mixing of graphite and PLA - already been done
+	- carbon fiber
+	- chitin - according to previous studies it does not change the properties of the material
+	- graphene
+
+- ordered the new extruder
+- effect of drying filament
+
+Concerns with using graphite: magnetic mixing might be needed: https://www.sciencedirect.com/science/article/pii/S0141391010000042#sec3.1
+	- impurities
+
+MUST DRY ALL COMPONENTS INCLUDING GRAPHITE - find the way to do this/protocol
+
+Things to do next week
+- familiarize self with LAMMPS?
+	- download
+	- look at C++ syntax
+
+- learn tensile testing machine
+- learn 3D printer
+- ask Zhao about wood blender
+- familiarize self with filabot manual
+- make sure that there are not other things to do
+- download/learn autoCAD
+
+
+NOTES: https://www.sciencedirect.com/science/article/pii/S2452321618300611 (mechanical testing of 3D printed polymers)
+	- figure out what dimensions tensile test machine required
+	- try 8x8x12mm
+
+parameters manipulated:
+	- layer thickness
+	- infill type/amount (cross, diamond, honeycomb, strong/hollow/solid)
+
+researchers then used some instrument to determine the cause of the fracture/see the fracture pattern
+
+found out the Ultimate Tensile Strength (UTS) in MPa
+
+7.1.2019
+send Zhao email asking for MD polymer system
+
+7.2.2019
+
+CHARMM force field config file:
+http://mackerell.umaryland.edu/charmm_ff.shtml
+
+
+commands for "namd basics":
+
+package require psfgen
+topology top_all27_prot_lipid.inp
+pdbalias residue HIS HSE
+pdbalias atom ILE CD1 CD
+segment U {pdb ubqp.pdb}
+coordpdb ubqp.pdb U
+guesscoord
+writepdb ubq.pdb
+writepsf ubq.psf
+
+To do today:
+run an NAMD simulation/get through tutorial
+
+
+Problem I am having: I am not able to convert pdb into psf which is what NAMD needs. 
+This is because I am not able to open the pgn file I saved with all my commands using the Terminal command line that was given to me in the tutorial. It says "file or directory not found". I think this could be because VMD is installed in a weird place. 
+
+Ideas:
+
+use command line to move VMD installation to applications folder which is local to user neosha
+
+install VMD again
+
+watch video on converting to psf (indian guy)
+
+
+7.3.2019
+
+terminal command to convert pdb to psf from pgn config file:  /Users/neosha/Desktop/VMD\ 1.9.4.app/Contents/vmd/vmd_MACOSXX86 -dispdev text -e ubq.pgn
+
+when adding water to ubiquitin, record results of adding wat_sphere.tcl
+CENTER OF MASS OF SPHERE IS: 30.313880920410156 28.926279067993164 15.284499168395996
+RADIUS OF SPHERE IS: 25.338976022041
+
+
+Questions: 
+NAMD tutorial page 18: what is the scaled1-4?? why are we specifying it this way?
+
+NAMD user guide: http://www.ks.uiuc.edu/Research/namd/2.13/ug/
+
+
+7.8.2019
+Results of phone call with Markus
+
+use LAMMPS instead of NAMD
+ask around the group for help/example simulations I can run
+get familiar with LAMMPS this week
+look for papers with PLA/graphite
+look for emails 
+
+
+/usr/local/Cellar/lammps/2019-06-0 is the location of LAMMPS executable
+
+Things I'd like to do
+Get LAMMPS support with Python - need to build LAMMPS manually
+see if you can get movie support to generate movies
+
+cloned LAMMPS into home folder: ~/ (same level where Desktop, Dropbox are)
+
+to do:
+
+work through LAMMPS examples on website
+create git repository
+see if you can build into Python
+
 
 7.8.2019
 
@@ -14,3 +201,68 @@ continue looking into building lammps from source code instead of using executab
 finish Isabelle's slides
 
 https://lammps.sandia.gov/doc/dump_image.html how to create videos
+
+
+
+7.9.2019
+
+did:
+ran these commands to build lammps with Eesha's help
+
+downloaded source code from github
+make serial from source code/src
+make yes-molecule etc. (see eesha’s notes)
+make yes-all if you want everything installed
+after enabling the package you have to do “make” again
+download openmpi 4.0.1 from website and put into Applications/src (just click on in it in file system to unzip the tar gz file)
+configured: ./configure --prefix=”/Applications/src/.openmpi”
+make
+make mpi
+
+
+
+EESHA'S NOTES:
+LAMMPS Installation
+
+a.     sudo apt-get install build-essential
+b.     sudo apt-get install gcc-multilib
+c.      sudo apt-get install rpm
+d.     download open-mpi -3.1.0 from website
+                                               i.     tar -xvf openmpi-* 
+
+                                              ii.     cd openmpi-* 
+
+                                             iii.     ./configure --prefix="/home/eesha /.openmpi"
+
+                                             iv.     make
+
+                                              v.     sudo make install 
+
+e.     sudo apt-get install libomp-dev
+f.      sudo apt-get install openmpi-bin
+g.     sudo apt-get install mpich
+h.     Start to make LAMMPS in cd lammps-stable_12Dec18/src
+                                               i.     make no-all
+                                              ii.     make yes-molecule yes-kspace yes-body yes-manybody
+
+
+
+
+
+We have not been able to install lmp_mpi but lmp_serial is built properly
+Isabelle suggested to use Abaqus instead of LAMMPS
+
+
+USING LAMMPS WITH PYTHON:
+go to ~/mylammps/src
+
+make lmp_serial mode=shlib (to make the lmp_serial machine a shared library to share with Python)
+
+
+
+
+
+
+
+
+
