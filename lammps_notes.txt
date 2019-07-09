@@ -259,9 +259,11 @@ go to ~/mylammps/src
 make lmp_serial mode=shlib (to make the lmp_serial machine a shared library to share with Python)
 
 
+https://lammps.sandia.gov/doc/Python_mpi.html tried to install MPI using PyPar but since LAMMPS MPI is not built, it did not work
 
 
-
+Information on potentials used for LAMMPS simulations:
+https://www.ctcms.nist.gov/potentials/
 
 
 
