@@ -13,3 +13,4 @@ continue looking into building lammps from source code instead of using executab
 
 finish Isabelle's slides
 
+https://lammps.sandia.gov/doc/dump_image.html how to create videos
