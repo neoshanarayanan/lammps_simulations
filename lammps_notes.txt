@@ -266,6 +266,22 @@ Information on potentials used for LAMMPS simulations:
 https://www.ctcms.nist.gov/potentials/
 
 
+7.10.2019
+
+how to loop over files in bash: https://www.cyberciti.biz/faq/bash-loop-over-file/
+
+
+running lmp_serial from matlab only works if everything is in mylammps/src directory (i.e., location of executable??) and must specify ./ in paths/filenames
+- HOWEVER lmp_serial does work in bash from anywhere. just in matlab does it complain
+
+
+
+Sample simulation of deformation of amorphous polyethylene from Mark Tschopp:
+
+https://icme.hpc.msstate.edu/mediawiki/index.php/Deformation_of_Amorphous_Polyethylene
+
+
+
 
 
 
